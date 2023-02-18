@@ -12,3 +12,5 @@ _https://www.waveshare.com/wiki/RGB-Matrix-P3-64x64_
 **I also used an Arduino Mega 2560 and a 5V and 4A power supply.**
 
 If you want to try this out, you need to download the whole folder and additionally include the library "DS3231" that is located inside the folder.
+
+![20230218_140909](https://user-images.githubusercontent.com/102669611/219867588-ce21fc0a-3645-4d1e-b2c9-4eb4c4af3dc4.jpg)
