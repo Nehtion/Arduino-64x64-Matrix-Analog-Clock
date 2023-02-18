@@ -63,7 +63,7 @@ void setup() {
   clock.setDateTime(__DATE__, __TIME__);  
   //clock.setDateTime(2023, 2, 18, 14, 00, 00); //Set up Date manually
   aClockSetup();
-  matrix.drawPixel(1,2, matrix.Color333(7, 7, 7));
+  //matrix.drawPixel(1,2, matrix.Color333(7, 7, 7));
 }
 
 void loop() {
