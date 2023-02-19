@@ -98,10 +98,10 @@ void aClockSetup() {
   matrix.drawCircle(x_center, y_center, radius+5, matrix.Color333(7,7,7));      //Draw Clock Circle
   for(int i = 0+adj; i < 60+adj; i++) {                                         //Add Minute/second ticks
     tAngle = (6*i) * PI / 180.0;
-    tx = x_center + (radius+4) * cos(tAngle);Serial.print("X: ");//Serial.println(tx);
-    ty = y_center + (radius+4) * sin(tAngle);Serial.print("Y: ");// Serial.println(ty);
-    txx = x_center + (radius+3) * cos(tAngle);Serial.print("X2: "); //Serial.println(txx);
-    tyy = y_center + (radius+3) * sin(tAngle);Serial.print("Y2: "); //Serial.println(tyy);
+    tx = x_center + (radius+4) * cos(tAngle);//Serial.print("X: "); Serial.println(tx);
+    ty = y_center + (radius+4) * sin(tAngle);//Serial.print("Y: "); Serial.println(ty);
+    txx = x_center + (radius+3) * cos(tAngle);//Serial.print("X2: "); Serial.println(txx);
+    tyy = y_center + (radius+3) * sin(tAngle);//Serial.print("Y2: "); Serial.println(tyy);
     matrix.drawLine(round(tx),round(ty),round(txx),round(tyy), matrix.Color333(2,7,7));
   }
   for(int i = 0 +adj; i < 12+adj; i++) {                                        //Add Hour ticks
