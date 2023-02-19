@@ -1,8 +1,9 @@
-# 64x64MatrixAnalogClock
+# Arduino Mega 64x64 Matrix Analog Clock
 Arduino Code for Arduino 2560 with Matrix 64x64 P3 Analog Clock also using a Real Time Clock module
 
 Hello,
-I programmed an **analog Clock** for a 64x64 matrix p3. 
+I programmed an **analog Clock** for a 64x64 matrix p3.
+**I am probably the first one to programm a analog clock for a matrix module using an Arduino.**
 For my project, I used a **Matrix 64x64 P3** 
 _https://www.amazon.de/Full-Color-Raspberry-Individual-Brightness-Adjustable/dp/B0B3GQD3JM/ref=d_pd_sbs_sccl_3_2/258-1842784-9256966?pd_rd_w=AExMk&content-id=amzn1.sym.e240add7-999b-4e0b-8c0e-340ec2846a97&pf_rd_p=e240add7-999b-4e0b-8c0e-340ec2846a97&pf_rd_r=TSFXFFD8A88NBNR576VB&pd_rd_wg=PPYST&pd_rd_r=51395677-8431-4556-8b8e-e2520f6bbdb3&pd_rd_i=B0B3GQD3JM&th=1_ 
 
