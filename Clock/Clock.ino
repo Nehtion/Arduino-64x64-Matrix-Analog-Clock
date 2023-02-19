@@ -36,10 +36,13 @@ RGBmatrixPanel matrix(A, B, C, D, E, CLK, LAT, OE, false, 64);
 
 //Clock variable
 #define PI 3.1415926535897932384626433832795
-
+/*
+ * By Changing the Center Coordiantes and the radius everything else will 
+ * transform as well. Even the numbers will move!
+ */
 int x_center = 31;
 int y_center = 31;
-int radius = 19;
+int radius = 19;     
 float tAngle;
 float tx;
 float ty;
@@ -98,7 +101,7 @@ void aClockSetup() {
   matrix.drawCircle(x_center, y_center, radius+5, matrix.Color333(7,7,7));      //Draw Clock Circle
   for(int i = 0+adj; i < 60+adj; i++) {                                         //Add Minute/second ticks
     tAngle = (6*i) * PI / 180.0;
-    tx = x_center + (radius+4) * cos(tAngle);//Serial.print("X: "); Serial.println(tx);
+    tx = x_center + (radius+4) * cos(tAngle);//Serial.print("X: ");Serial.println(tx);
     ty = y_center + (radius+4) * sin(tAngle);//Serial.print("Y: "); Serial.println(ty);
     txx = x_center + (radius+3) * cos(tAngle);//Serial.print("X2: "); Serial.println(txx);
     tyy = y_center + (radius+3) * sin(tAngle);//Serial.print("Y2: "); Serial.println(tyy);
@@ -146,80 +149,109 @@ void aClock() {
  */
 
 void numbers() {
-  //Number 12
-   matrix.drawLine(28,0,29,0,matrix.Color333(7,7,7)); //12: 1
-   matrix.drawLine(29,1,29,3,matrix.Color333(7,7,7));
-   matrix.drawLine(28,4,30,4,matrix.Color333(7,7,7));
-   matrix.drawLine(32,0,34,0,matrix.Color333(7,7,7)); //12: 2
-   matrix.drawPixel(34,1,matrix.Color333(7,7,7));
-   matrix.drawLine(32,2,34,2,matrix.Color333(7,7,7));
-   matrix.drawPixel(32,3,matrix.Color333(7,7,7));
-   matrix.drawLine(32,4,34,4,matrix.Color333(7,7,7));
-   //Number 11
-   matrix.drawLine(14,4,15,4,matrix.Color333(7,7,7)); //11: 1
-   matrix.drawLine(15,5,15,7,matrix.Color333(7,7,7));
-   matrix.drawLine(14,8,16,8,matrix.Color333(7,7,7));
-   matrix.drawLine(18,4,19,4,matrix.Color333(7,7,7)); //11: 1
-   matrix.drawLine(19,5,19,7,matrix.Color333(7,7,7));
-   matrix.drawLine(18,8,20,8,matrix.Color333(7,7,7));
-   //Number 10
-   matrix.drawLine(3,14,4,14,matrix.Color333(7,7,7)); //10: 1
-   matrix.drawLine(4,15,4,17,matrix.Color333(7,7,7));
-   matrix.drawLine(3,18,5,18,matrix.Color333(7,7,7));
-   matrix.drawLine(7,15,7,17,matrix.Color333(7,7,7)); //10: 0
-   matrix.drawPixel(8,18,matrix.Color333(7,7,7));
-   matrix.drawLine(9,15,9,17,matrix.Color333(7,7,7));
-   matrix.drawPixel(8,14,matrix.Color333(7,7,7));
-   //Number 9
-   matrix.drawLine(1,29,1,31,matrix.Color333(7,7,7));
-   matrix.drawLine(1,33,3,33,matrix.Color333(7,7,7));
-   matrix.drawLine(3,29,3,32,matrix.Color333(7,7,7));
-   matrix.drawPixel(2,31,matrix.Color333(7,7,7));
-   matrix.drawPixel(2,29,matrix.Color333(7,7,7));
-   //Number 8
-   matrix.drawLine(5,44,5,48,matrix.Color333(7,7,7));
-   matrix.drawLine(7,44,7,48,matrix.Color333(7,7,7));
-   matrix.drawPixel(6,44,matrix.Color333(7,7,7));
-   matrix.drawPixel(6,46,matrix.Color333(7,7,7));
-   matrix.drawPixel(6,48,matrix.Color333(7,7,7));
-   //Number 7
-   matrix.drawLine(15,54,17,54,matrix.Color333(7,7,7));
-   matrix.drawLine(17,55,17,58,matrix.Color333(7,7,7));
-   matrix.drawPixel(15,55,matrix.Color333(7,7,7));
-   //Number 6
-   matrix.drawLine(30,58,30,62,matrix.Color333(7,7,7));
-   matrix.drawLine(32,60,32,62,matrix.Color333(7,7,7));
-   matrix.drawLine(30,58,32,58,matrix.Color333(7,7,7));
-   matrix.drawPixel(31,60,matrix.Color333(7,7,7));
-   matrix.drawPixel(31,62,matrix.Color333(7,7,7));
-   //Number 5
-   matrix.drawLine(44,54,46,54,matrix.Color333(7,7,7)); 
-   matrix.drawPixel(44,55,matrix.Color333(7,7,7));
-   matrix.drawLine(44,56,46,56,matrix.Color333(7,7,7));
-   matrix.drawPixel(46,57,matrix.Color333(7,7,7));
-   matrix.drawLine(44,58,46,58,matrix.Color333(7,7,7));
-   //Number 4
-   matrix.drawLine(55,46,58,46,matrix.Color333(7,7,7)); 
-   matrix.drawPixel(56,44,matrix.Color333(7,7,7));
-   matrix.drawLine(57,43,57,47,matrix.Color333(7,7,7));
-   matrix.drawPixel(55,45,matrix.Color333(7,7,7));
-   matrix.drawLine(44,58,46,58,matrix.Color333(7,7,7));
-   //Number 3
-   matrix.drawLine(59,33,61,33,matrix.Color333(7,7,7)); 
-   matrix.drawPixel(61,30,matrix.Color333(7,7,7));
-   matrix.drawLine(59,31,61,31,matrix.Color333(7,7,7));
-   matrix.drawPixel(61,32,matrix.Color333(7,7,7));
-   matrix.drawLine(59,29,61,29,matrix.Color333(7,7,7));
-   //Number 2
-   matrix.drawLine(55,15,57,15,matrix.Color333(7,7,7));
-   matrix.drawPixel(57,16,matrix.Color333(7,7,7));
-   matrix.drawLine(55,17,57,17,matrix.Color333(7,7,7));
-   matrix.drawPixel(55,18,matrix.Color333(7,7,7));
-   matrix.drawLine(55,19,57,19,matrix.Color333(7,7,7));
-   //Number 1
-   matrix.drawLine(45,4,46,4,matrix.Color333(7,7,7));
-   matrix.drawLine(46,5,46,7,matrix.Color333(7,7,7));
-   matrix.drawLine(45,8,47,8,matrix.Color333(7,7,7));
+   for(int i = 0 +adj; i < 12+adj; i++) {                                        
+    tAngle = (30*i) * PI / 180.0;
+    tx = x_center + (radius+10) * cos(tAngle);//Serial.print(i-adj);Serial.print(" X: ");Serial.println(round(tx));
+    ty = y_center + (radius+10) * sin(tAngle);//Serial.print(i-adj);Serial.print(" Y: ");Serial.println(round(ty));
+    tx = round(tx);
+    ty = round(ty);
+    if(i-adj==0) { //Number 12
+      matrix.drawLine(tx-3,ty-2,tx-2,ty-2,matrix.Color333(7,7,7)); //12: 1
+      matrix.drawLine(tx-2,ty-1,tx-2,ty+1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-3,ty+2,tx-1,ty+2,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty-2,tx+3,ty-2,matrix.Color333(7,7,7)); //12: 2
+      matrix.drawPixel(tx+3,ty-1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty,tx+3,ty,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx+1,ty+1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty+2,tx+3,ty+2,matrix.Color333(7,7,7));
+    }
+    if(i-adj==11) {
+      //Number 11
+      matrix.drawLine(tx-3,ty-2,tx-2,ty-2,matrix.Color333(7,7,7)); //11: 1
+      matrix.drawLine(tx-2,ty-1,tx-2,ty+1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-3,ty+2,tx-1,ty+2,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty-2,tx+2,ty-2,matrix.Color333(7,7,7)); //11: 1
+      matrix.drawLine(tx+2,ty-1,tx+2,ty+1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty+2,tx+3,ty+2,matrix.Color333(7,7,7));
+    }
+    if(i-adj==10) {
+      //Number 10
+      matrix.drawLine(tx-3,ty-2,tx-2,ty-2,matrix.Color333(7,7,7)); //10: 1
+      matrix.drawLine(tx-2,ty-1,tx-2,ty+1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-3,ty+2,tx-1,ty+2,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty-1,tx+1,ty+1,matrix.Color333(7,7,7)); //10: 0
+      matrix.drawPixel(tx+2,ty+2,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+3,ty-1,tx+3,ty+1,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx+2,ty-2,matrix.Color333(7,7,7));
+    }
+    if(i-adj==9) {
+      //Number 9
+      matrix.drawLine(tx-1,ty-2,tx-1,ty,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-1,ty+2,tx+1,ty+2,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty-2,tx+1,ty+1,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx,ty,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx,ty-2,matrix.Color333(7,7,7));
+    }
+    if(i-adj==8) {
+      //Number 8
+      matrix.drawLine(tx-1,ty-2,tx-1,ty+2,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty-2,tx+1,ty+2,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx,ty-2,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx,ty,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx,ty+2,matrix.Color333(7,7,7));
+    }
+    if(i-adj==7) {
+      //Number 7
+      matrix.drawLine(tx-1,ty-2,tx+1,ty-2,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty-1,tx+1,ty+2,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx-1,ty-1,matrix.Color333(7,7,7));
+    }
+    if(i-adj==6) {
+      //Number 6
+      matrix.drawLine(tx-1,ty-2,tx-1,ty+2,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty,tx+1,ty+2,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-1,ty-2,tx+1,ty-2,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx,ty,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx,ty+2,matrix.Color333(7,7,7));
+    }
+    if(i-adj==5) {
+      //Number 5
+      matrix.drawLine(tx-1,ty-2,tx+1,ty-2,matrix.Color333(7,7,7)); 
+      matrix.drawPixel(tx-1,ty-1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-1,ty,tx+1,ty,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx+1,ty+1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-1,ty+2,tx+1,ty+2,matrix.Color333(7,7,7));
+    }
+    if(i-adj==4) {
+      //Number 4
+      matrix.drawLine(tx-1,ty+1,tx+2,ty+1,matrix.Color333(7,7,7)); 
+      matrix.drawPixel(tx,ty-1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx+1,ty-2,tx+1,ty+2,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx-1,ty,matrix.Color333(7,7,7));
+    }
+    if(i-adj==3) {
+      //Number 3
+      matrix.drawLine(tx-1,ty+2,tx+1,ty+2,matrix.Color333(7,7,7)); 
+      matrix.drawPixel(tx+1,ty-1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-1,ty,tx+1,ty,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx+1,ty+1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-1,ty-2,tx+1,ty-2,matrix.Color333(7,7,7));
+    }
+    if(i-adj==2) {
+      //Number 2
+      matrix.drawLine(tx-1,ty-2,tx+1,ty-2,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx+1,ty-1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-1,ty,tx+1,ty,matrix.Color333(7,7,7));
+      matrix.drawPixel(tx-1,ty+1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-1,ty+2,tx+1,ty+2,matrix.Color333(7,7,7));
+    }
+    if(i-adj==1) {
+      //Number 1
+      matrix.drawLine(tx-1,ty-2,tx,ty-2,matrix.Color333(7,7,7));
+      matrix.drawLine(tx,ty-1,tx,ty+1,matrix.Color333(7,7,7));
+      matrix.drawLine(tx-1,ty+2,tx+1,ty+2,matrix.Color333(7,7,7));
+    }
+   }
 }
 
 void screen_clear() {
